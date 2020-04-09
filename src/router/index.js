@@ -14,7 +14,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/DefaultContainer',
+      path: '/',
       name: 'Dashboard',
       component: DefaultContainer,
       children: [
@@ -46,7 +46,7 @@ export default new Router({
       ]
     },
     {
-      path: '/',
+      path: '/login',
       name: 'Login',
       component: Login
     }

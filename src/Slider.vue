@@ -16,7 +16,7 @@
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
+          <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
@@ -25,18 +25,46 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <va-slide-item
-          v-for="item in slideMenuItems"
-          :type="item.type"
-          :isHeader="item.isHeader"
-          :icon="item.icon"
-          :name="item.name"
-          :badge="item.badge"
-          :items="item.items"
-          :router="item.router"
-          :link="item.link"
-        >
-        </va-slide-item>
+        <li class="nav-item">
+          <router-link to="/" class="nav-link">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span>
+                    Dashboard
+                  </span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/User" class="nav-link">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span>
+                  User
+                </span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/Game" class="nav-link">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span>
+                    Game
+                  </span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/Deposit" class="nav-link">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span>
+                  Deposit
+                </span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/Withdraw" class="nav-link">
+            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <span>
+                  Withdraw
+                </span>
+          </router-link>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->

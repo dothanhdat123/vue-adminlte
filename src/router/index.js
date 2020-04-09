@@ -1,27 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from 'components/Hello.vue'
-import Sample from 'components/Sample.vue'
-import DashboardV1 from 'examples/Dashboard.v1.vue'
-import DashboardV2 from 'examples/Dashboard.v2.vue'
-import InfoBoxExample from 'examples/InfoBoxExample'
-import ChartExample from 'examples/ChartExample'
-import AlertExample from 'examples/AlertExample'
-import ModalExample from 'examples/ModalExample'
-import WidgetsExample from 'examples/WidgetsExample'
-import APIExample from 'examples/APIExample'
-
-// UI Element Groups
-import General from 'pages/ui-elements/General.vue'
-import Icons from 'pages/ui-elements/Icons.vue'
-import Buttons from 'pages/ui-elements/Buttons.vue'
-import Sliders from 'pages/ui-elements/Sliders.vue'
-import Timeline from 'pages/ui-elements/Timeline.vue'
-import Modals from 'pages/ui-elements/Modals.vue'
-
-// forms
-import GeneralElements from 'pages/forms/GeneralElements.vue'
-import AdvancedElements from 'pages/forms/AdvancedElements.vue'
+import Dashboard from 'examples/Dashboard.v2.vue'
+import Deposit from 'components/Deposit.vue'
+import Game from 'components/Game.vue'
+import User from 'components/User.vue'
+import Withdraw from 'components/Withdraw.vue'
 
 Vue.use(Router)
 
@@ -30,94 +13,53 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
-      path: '/sample',
-      name: 'Sample',
-      component: Sample
+      path: '/Deposit',
+      name: 'Deposit',
+      component: Deposit
     },
     {
-      path: '/dashboard/v1',
-      name: 'DashboardV1',
-      component: DashboardV1
+      path: '/Game',
+      name: 'Game',
+      component: Game
     },
     {
-      path: '/dashboard/v2',
-      name: 'DashboardV2',
-      component: DashboardV2
+      path: '/User',
+      name: 'User',
+      component: User
     },
     {
-      path: '/examples/infobox',
-      name: 'InfoBoxExample',
-      component: InfoBoxExample
-    },
-    {
-      path: '/examples/chart',
-      name: 'ChartExample',
-      component: ChartExample
-    },
-    {
-      path: '/examples/alert',
-      name: 'AlertExample',
-      component: AlertExample
-    },
-    {
-      path: '/examples/modal',
-      name: 'ModalExample',
-      component: ModalExample
-    },
-    {
-      path: '/examples/widgets',
-      name: 'WidgetsExample',
-      component: WidgetsExample
-    },
-    {
-      path: '/examples/api-example',
-      name: 'APIExample',
-      component: APIExample
-    },
-    {
-      path: '/ui-elements/general',
-      name: 'General',
-      component: General
-    },
-    {
-      path: '/ui-elements/icons',
-      name: 'Icons',
-      component: Icons
-    },
-    {
-      path: '/ui-elements/buttons',
-      name: 'Buttons',
-      component: Buttons
-    },
-    {
-      path: '/ui-elements/sliders',
-      name: 'Sliders',
-      component: Sliders
-    },
-    {
-      path: '/ui-elements/timeline',
-      name: 'Timeline',
-      component: Timeline
-    },
-    {
-      path: '/ui-elements/modals',
-      name: 'Modals',
-      component: Modals
-    },
-    {
-      path: '/forms/general-elements',
-      name: 'GeneralElements',
-      component: GeneralElements
-    },
-    {
-      path: '/forms/advanced-elements',
-      name: 'AdvancedElements',
-      component: AdvancedElements
+      path: '/Withdraw',
+      name: 'Withdraw',
+      component: Withdraw
     }
   ],
-  linkActiveClass: 'active'
+  linkActiveClass: 'active',
+  scrollBehavior: () => ({y: 0})
 })
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requireAuth)) {
+//     if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
+//       next()
+//     } else {
+//       next({
+//         path: '/login',
+//         params: {nextUrl: to.fullPath}
+//       })
+//     }
+//   } else {
+//     if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
+//       if (to.fullPath) {
+//         next({
+//           path: '/dashboard',
+//           params: {nextUrl: to.fullPath}
+//         })
+//       }
+//     }
+//     next()
+//   }
+// })
+

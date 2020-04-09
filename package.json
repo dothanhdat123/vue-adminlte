@@ -35,6 +35,7 @@
   "hompage": "https://github.com/re0marb1e/vue-adminlte#readme",
   "dependencies": {
     "admin-lte": "2.3.11",
+    "ant-design-vue": "^1.5.1",
     "axios": "^0.15.3",
     "bootstrap": "^3.3.7",
     "bootstrap3-wysihtml5-bower": "^0.3.3",

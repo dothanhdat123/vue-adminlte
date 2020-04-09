@@ -9,9 +9,13 @@ import App from './App'
 import router from './router'
 import EventBus from './lib/eventBus.js'
 import axios from 'axios'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
 
+Vue.config.productionTip = false
 Vue.prototype.$bus = EventBus
 Vue.prototype.$http = axios
+Vue.use(Antd)
 
 /* eslint-disable no-new */
 new Vue({

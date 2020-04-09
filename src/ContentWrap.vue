@@ -39,4 +39,7 @@ export default {
 .page-enter, .page-leave-to {
   opacity: 0;
 }
+  .content-wrapper{
+    background: #ffffff !important;
+  }
 </style>

@@ -7,15 +7,17 @@
       <div class="fadeIn first">
         <h1>Login</h1>
       </div>
-
-      <!-- Login Form -->
-      <form @submit="onSubmit">
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" v-model="email" @change="changeEmail">
-        <p>{{errorEmail}}</p>
+      <div>
+        <input type="text" id="login" class="fadeIn second"  placeholder="email" v-model="email" @change="changeEmail">
+        <p class="err">{{errorEmail}}</p>
         <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" v-model="password" @change = "changePass">
-        <p>{{errorPassword}}</p>
-        <input type="submit" class="fadeIn fourth" value="Log In">
-      </form>
+        <p class="err">{{errorPassword}}</p>
+      </div>
+
+      <div class="button">
+        <button class="btn btn-primary " @click="onSubmit">Log In</button>
+      </div>
+
 
       <!-- Remind Passowrd -->
       <div id="formFooter">
@@ -25,7 +27,50 @@
     </div>
   </div>
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        email: null,
+        password: null,
+        errorEmail: '',
+        errorPassword: ''
+      }
+    },
+    methods: {
+      changeEmail (value) {
+      },
+      changePass (value) {
+      },
+      onSubmit () {
+        this.errorEmail = ''
+        this.errorPassword = ''
+        if (this.email == null) {
+          this.errorEmail = 'This field is required'
+        }
+        if (this.password == null) {
+          this.errorPassword = 'This field is required'
+        }
+        if (this.email != null && this.password != null) {
+          window.location.href = '/'
+          console.log(this.email)
+        }
+      }
+    }
+  }
+</script>
+<style>
+  #app{
+    min-height: 100%;
+  }
+</style>
 <style scoped>
+  .button{
+    margin: 20px;
+  }
+  .err{
+    color: red;
+  }
   a {
     color: #92badd;
     display:inline-block;
@@ -59,19 +104,20 @@
     width: 100%;
     min-height: 100%;
     padding: 20px;
+    background: #ffffff !important;
   }
 
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
-    padding: 30px;
     width: 90%;
     max-width: 450px;
     position: relative;
     padding: 0px;
-    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    -webkit-box-shadow: -4px 8px 24px -4px rgba(97,80,97,1);
+    -moz-box-shadow: -4px 8px 24px -4px rgba(97,80,97,1);
+    box-shadow: -4px 8px 24px -4px rgba(97,80,97,1);
     text-align: center;
   }
 
@@ -177,7 +223,7 @@
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-  }
+      }
 
   @-webkit-keyframes fadeInDown {
     0% {
@@ -281,24 +327,4 @@
     width:60%;
   }
 </style>
-<script>
-  export default {
-    data () {
-      return {
-        email: '',
-        password: '',
-        error: null
-      }
-    },
-    methods: {
-      changeEmail (value) {
-      },
-      changePass (value) {
-      },
-      onSubmit (e) {
-        e.preventDefault()
-        window.location.href = '/'
-      }
-    }
-  }
-</script>
+

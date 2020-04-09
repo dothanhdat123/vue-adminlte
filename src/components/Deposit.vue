@@ -1,8 +1,8 @@
 <template>
   <div class="deposit">
     <h1>Deposit</h1>
-    <table class="table">
-      <thead class="thead-dark">
+    <table class="table table-hover table-bordered">
+      <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">First</th>

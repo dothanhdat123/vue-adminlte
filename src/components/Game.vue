@@ -1,7 +1,7 @@
 <template>
   <div class="deposit">
     <h1>Game</h1>
-    <table class="table">
+    <table class="table table-hover ">
       <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>

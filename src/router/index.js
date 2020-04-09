@@ -5,6 +5,7 @@ import Deposit from 'components/Deposit.vue'
 import Game from 'components/Game.vue'
 import User from 'components/User.vue'
 import Withdraw from 'components/Withdraw.vue'
+import Login from 'auth/Login.vue'
 
 Vue.use(Router)
 
@@ -12,7 +13,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/Dashboard',
       name: 'Dashboard',
       component: Dashboard
     },
@@ -35,6 +36,11 @@ export default new Router({
       path: '/Withdraw',
       name: 'Withdraw',
       component: Withdraw
+    },
+    {
+      path: '/',
+      name: 'Login',
+      component: Login
     }
   ],
   linkActiveClass: 'active',

@@ -5,6 +5,7 @@ import Deposit from 'components/Deposit.vue'
 import Game from 'components/Game.vue'
 import User from 'components/User.vue'
 import Withdraw from 'components/Withdraw.vue'
+import DefaultContainer from 'components/default.vue'
 import Login from 'auth/Login.vue'
 
 Vue.use(Router)
@@ -12,6 +13,11 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
+    {
+      path: '/DefaultContainer',
+      name: 'Dashboard',
+      component: DefaultContainer
+    },
     {
       path: '/Dashboard',
       name: 'Dashboard',

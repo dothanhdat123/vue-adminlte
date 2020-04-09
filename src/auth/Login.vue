@@ -291,7 +291,7 @@
     methods: {
       onSubmit (e) {
         e.preventDefault()
-        window.location.href = '/Dashboard'
+        window.location.href = '/DefaultContainer'
       }
     }
   }

@@ -10,8 +10,10 @@
 
       <!-- Login Form -->
       <form @submit="onSubmit">
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" v-model="email" @change="changeEmail">
+        <p>{{errorEmail}}</p>
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" v-model="password" @change = "changePass">
+        <p>{{errorPassword}}</p>
         <input type="submit" class="fadeIn fourth" value="Log In">
       </form>
 
@@ -289,6 +291,10 @@
       }
     },
     methods: {
+      changeEmail (value) {
+      },
+      changePass (value) {
+      },
       onSubmit (e) {
         e.preventDefault()
         window.location.href = '/DefaultContainer'

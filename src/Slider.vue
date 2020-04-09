@@ -26,7 +26,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="nav-item">
-          <router-link to="/" class="nav-link">
+          <router-link to="/Dashboard" class="nav-link">
             <i class="fa fa-list-alt" aria-hidden="true"></i>
             <span>
                     Dashboard

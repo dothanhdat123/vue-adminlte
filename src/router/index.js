@@ -16,32 +16,34 @@ export default new Router({
     {
       path: '/DefaultContainer',
       name: 'Dashboard',
-      component: DefaultContainer
-    },
-    {
-      path: '/Dashboard',
-      name: 'Dashboard',
-      component: Dashboard
-    },
-    {
-      path: '/Deposit',
-      name: 'Deposit',
-      component: Deposit
-    },
-    {
-      path: '/Game',
-      name: 'Game',
-      component: Game
-    },
-    {
-      path: '/User',
-      name: 'User',
-      component: User
-    },
-    {
-      path: '/Withdraw',
-      name: 'Withdraw',
-      component: Withdraw
+      component: DefaultContainer,
+      children: [
+        {
+          path: '/Dashboard',
+          name: 'Dashboard',
+          component: Dashboard
+        },
+        {
+          path: '/Deposit',
+          name: 'Deposit',
+          component: Deposit
+        },
+        {
+          path: '/Game',
+          name: 'Game',
+          component: Game
+        },
+        {
+          path: '/User',
+          name: 'User',
+          component: User
+        },
+        {
+          path: '/Withdraw',
+          name: 'Withdraw',
+          component: Withdraw
+        }
+      ]
     },
     {
       path: '/',

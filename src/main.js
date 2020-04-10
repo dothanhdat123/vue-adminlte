@@ -11,10 +11,15 @@ import EventBus from './lib/eventBus.js'
 import axios from 'axios'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 Vue.config.productionTip = false
 Vue.prototype.$bus = EventBus
 Vue.prototype.$http = axios
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 Vue.use(Antd)
 
 /* eslint-disable no-new */

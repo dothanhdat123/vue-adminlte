@@ -23,11 +23,11 @@
         </div>
       </form>
       <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
+     <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="nav-item">
           <router-link to="/Dashboard" class="nav-link">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <i class="fa fa-tachometer" aria-hidden="true"></i>
             <span>
                     Dashboard
                   </span>
@@ -35,7 +35,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/User" class="nav-link">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <i class="fa fa-user" aria-hidden="true"></i>
             <span>
                   User
                 </span>
@@ -43,7 +43,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/Game" class="nav-link">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <i class="fa fa-gamepad" aria-hidden="true"></i>
             <span>
                     Game
                   </span>
@@ -51,7 +51,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/Deposit" class="nav-link">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <i class="fa fa-credit-card" aria-hidden="true"></i>
             <span>
                   Deposit
                 </span>
@@ -59,7 +59,7 @@
         </li>
         <li class="nav-item">
           <router-link to="/Withdraw" class="nav-link">
-            <i class="fa fa-list-alt" aria-hidden="true"></i>
+            <i class="fa fa-money" aria-hidden="true"></i>
             <span>
                   Withdraw
                 </span>

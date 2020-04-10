@@ -171,9 +171,9 @@
           <div class='col-md-2'>
           </div>
           <div class='col-md-8'> 
-              <p class='text-center'>
+              <!-- <p class='text-center'>
                <strong>Total Daily Mcashchain</strong>
-              </p>
+              </p> -->
               <va-chart :chart-config='barChartConfig'></va-chart>
           </div>
           <div class='col-md-2'>    
@@ -274,6 +274,7 @@
         }
       }
     },
+
     methods: {
       getdata () {
         let number = [10, 60, 30, 40, 50, 30, 10, 60, 30, 40, 50, 30, 10, 60, 30, 40, 50, 30, 50, 30]

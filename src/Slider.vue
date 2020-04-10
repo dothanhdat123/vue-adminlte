@@ -28,15 +28,12 @@
       <ul class="sidebar-menu">
         <li class="active treeview">
           <router-link to="/Dashboard" class="nav-link">
-            <i class="fa fa-tachometer" aria-hidden="true"></i>
-            <span>
-                    Dashboard
-                  </span>
+            <i class="fa fa-tachometer" aria-hidden="true"></i><span>Dashboard</span><i class="fa fa-angle-left pull-right"></i>
           </router-link>
           <ul class="treeview-menu">
             <li class="active">
               <router-link to="/UserHightChart" class="nav-link">
-                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <i class="fa fa-user" aria-hidden="true"></i>
                 <span>
                     User
                   </span>
@@ -44,7 +41,7 @@
             </li>
             <li>
               <router-link to="/RevenueHightChart" class="nav-link">
-                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <i class="fa fa-money" aria-hidden="true"></i>
                 <span>
                    Revenue
                   </span>
@@ -52,7 +49,7 @@
             </li>
             <li>
               <router-link to="/VolumeHightChart" class="nav-link">
-                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <i class="fa fa-volume-up"></i>
                 <span>
                     Volume play
                   </span>

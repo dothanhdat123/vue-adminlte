@@ -1,8 +1,81 @@
 <template>
   <div>
-    <h1>Biểu đồ user theo type</h1>
-    <va-chart
-      :chart-config='chartConfig'></va-chart>
+    <h3>ToTal User: 3000 <small>User</small></h3>
+    <h3>Biểu đồ user theo type</h3>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-2'>
+          </div>
+          <div class='col-md-8'> 
+             <va-chart
+               :chart-config='chartConfig'>
+             </va-chart> 
+          </div>
+          <div class='col-md-2'>    
+          </div>
+        </div>
+      </div>
+    </div>
+     <h3>Total Daily new user</h3>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-2'>
+          </div>
+          <div class='col-md-8'> 
+              <p class='text-center'>
+               <strong>Total Daily Mcashchain</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+              <br />
+              <p class='text-center'>
+                <strong>Total Daily Metamask</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+              <br />
+              <p class='text-center'>
+                <strong>Total Daily Tron</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+              <br />
+              <p class='text-center'>
+                <strong>Total Daily Facebook</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+              <br />
+              <p class='text-center'>
+                <strong>Total Daily Google</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+              <br />
+              <p class='text-center'>
+                <strong>Total Daily Twitter</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+          </div>
+          <div class='col-md-2'>    
+          </div>
+        </div>
+      </div>
+    </div>
+     <h3>Biểu đồ new user 20 ngày gần nhất</h3>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-2'>
+          </div>
+          <div class='col-md-8'> 
+              <p class='text-center'>
+               <strong>Total Daily Mcashchain</strong>
+              </p>
+              <va-chart :chart-config='barChartConfig'></va-chart>
+          </div>
+          <div class='col-md-2'>    
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,6 +103,45 @@
             legend: {
               position: 'bottom',
               display: true
+            }
+          }
+        },
+        barChartConfig: {
+          type: 'bar',
+          data: {
+            labels: ['10/4/2020', '9/4/2020', '8/4/2020', '7/4/2020', '6/4/2020', '5/4/2020', '4/4/2020', '3/4/2020', '2/4/2020', '1/4/2020', '31/3/2020', '30/4/2020', '29/4/2020', '28/4/2020', '27/4/2020', '26/3/2020', '25/4/2020', '24/4/2020', '23/4/2020', '22/4/2020'],
+            datasets: [
+              {
+                label: 'New User Daily',
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1,
+                data: [65, 59, 80, 81, 56, 55, 40, 90, 20, 15, 36, 52, 11, 25, 46, 18, 29, 64, 37,28]
+              }
+            ]
+          },
+          options: {
+            scales: {
+              xAxes: [{
+                stacked: true
+              }],
+              yAxes: [{
+                stacked: true
+              }]
             }
           }
         }

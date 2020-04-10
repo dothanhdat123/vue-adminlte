@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Biểu đồ user theo type</h1>
+    <h2>Biểu đồ user theo type</h2>
     <va-chart
       :chart-config='chartConfig'></va-chart>
   </div>

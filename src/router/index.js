@@ -1,16 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Dashboard from 'examples/Dashboard.v2.vue'
 import Deposit from 'components/Deposit.vue'
 import Game from 'components/Game.vue'
 import User from 'components/User.vue'
 import Withdraw from 'components/Withdraw.vue'
 import DefaultContainer from 'components/default.vue'
 import Login from 'auth/Login.vue'
-
-// hightchart
-import UserHightChart from 'components/hightChart/revenue_20day.vue'
-import RevenueHightChart from 'components/hightChart/revenue.vue'
-import VolumeHightChart from 'components/hightChart/volume.vue'
 
 Vue.use(Router)
 let router = new Router({
@@ -28,7 +24,7 @@ let router = new Router({
         {
           path: '/Dashboard',
           name: 'Dashboard',
-          component: UserHightChart
+          component: Dashboard
         },
         {
           path: '/Deposit',
@@ -49,21 +45,6 @@ let router = new Router({
           path: '/Withdraw',
           name: 'Withdraw',
           component: Withdraw
-        },
-        {
-          path: '/UserHightChart',
-          name: 'UserHightChart',
-          component: UserHightChart
-        },
-        {
-          path: '/RevenueHightChart',
-          name: 'RevenueHightChart',
-          component: RevenueHightChart
-        },
-        {
-          path: '/VolumeHightChart',
-          name: 'VolumeHightChart',
-          component: VolumeHightChart
         }
       ]
     },

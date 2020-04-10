@@ -9,7 +9,8 @@
         </div>
         <div class="pull-left info">
           <p>{{ currentUser.name }}</p>
-          <a href="#"><i class="fa fa-circle" :style="`color:${currentUser.state.color}`"></i> {{ currentUser.state.name }}</a>
+          <a href="#"><i class="fa fa-circle" :style="`color:${currentUser.state.color}`"></i> {{ currentUser.state.name
+            }}</a>
         </div>
       </div>
       <!-- search form -->
@@ -23,15 +24,41 @@
         </div>
       </form>
       <!-- /.search form -->
-     <!-- sidebar menu: : style can be found in sidebar.less -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="nav-item">
+        <li class="active treeview">
           <router-link to="/Dashboard" class="nav-link">
             <i class="fa fa-tachometer" aria-hidden="true"></i>
             <span>
                     Dashboard
                   </span>
           </router-link>
+          <ul class="treeview-menu">
+            <li class="active">
+              <router-link to="/UserHightChart" class="nav-link">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span>
+                    User
+                  </span>
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/RevenueHightChart" class="nav-link">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span>
+                   Revenue
+                  </span>
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/VolumeHightChart" class="nav-link">
+                <i class="fa fa-tachometer" aria-hidden="true"></i>
+                <span>
+                    Volume play
+                  </span>
+              </router-link>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <router-link to="/User" class="nav-link">
@@ -72,27 +99,27 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import VASlideItem from './components/VASlideItem'
+  import {mapGetters} from 'vuex'
+  import VASlideItem from './components/VASlideItem'
 
-export default {
-  name: 'va-slider',
-  props: {
-    slideMenuItems: {
-      type: Array,
-      default: []
+  export default {
+    name: 'va-slider',
+    props: {
+      slideMenuItems: {
+        type: Array,
+        default: []
+      }
+    },
+    created () {
+
+    },
+    computed: {
+      ...mapGetters([
+        'currentUser'
+      ])
+    },
+    components: {
+      'va-slide-item': VASlideItem
     }
-  },
-  created () {
-
-  },
-  computed: {
-    ...mapGetters([
-      'currentUser'
-    ])
-  },
-  components: {
-    'va-slide-item': VASlideItem
   }
-}
 </script>

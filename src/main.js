@@ -25,9 +25,6 @@ Vue.use(Antd)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
-  template: '<App/>',
-  components: {
-    App
-  }
+  render: h => h(App),
+  router: router
 })

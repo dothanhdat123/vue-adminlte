@@ -42,4 +42,7 @@ export default {
   .content-wrapper{
     background: #ffffff !important;
   }
+  .content{
+    padding: 0px 50px;
+  }
 </style>

@@ -9,13 +9,13 @@ import DefaultContainer from 'components/default.vue'
 import Login from 'auth/Login.vue'
 
 Vue.use(Router)
-
-export default new Router({
-  mode: 'history',
+let router = new Router({
+  mode: 'history', // https://router.vuejs.org/api/#mode
+  linkActiveClass: 'open active',
   routes: [
     {
       path: '/',
-      name: 'Dashboard',
+      name: 'DefaultContainer',
       component: DefaultContainer,
       children: [
         {
@@ -50,30 +50,19 @@ export default new Router({
       name: 'Login',
       component: Login
     }
-  ],
-  linkActiveClass: 'active',
-  scrollBehavior: () => ({y: 0})
+  ]
 })
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requireAuth)) {
-//     if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
-//       next()
-//     } else {
-//       next({
-//         path: '/login',
-//         params: {nextUrl: to.fullPath}
-//       })
-//     }
-//   } else {
-//     if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
-//       if (to.fullPath) {
-//         next({
-//           path: '/dashboard',
-//           params: {nextUrl: to.fullPath}
-//         })
-//       }
-//     }
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireAuth)) {
+    if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
+      next()
+    } else {
+      next({
+        path: '/login',
+        params: {nextUrl: to.fullPath}
+      })
+    }
+  } else next()
+})
+export default router
 

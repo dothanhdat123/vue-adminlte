@@ -22,9 +22,9 @@
       <div class='box-body'>
         <div class='row'>
           <div class='col-md-12'>
-            <p class='text-center'>
-            <strong>Total Daily Mcashchain</strong>
-            </p>
+              <p class='text-center'>
+               <strong>Total Daily Mcashchain</strong>
+              </p>
             <div class="overflow-auto">
               <b-table
                 id="my-table"
@@ -45,9 +45,17 @@
                 ></b-pagination>
               </div>
             </div>
-            <p class='text-center'>
-            <strong>Total Daily Metamask</strong>
-            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-12'>
+              <p class='text-center'>
+                 <strong>Total Daily Metamask</strong>
+              </p>
             <div class="overflow-auto">
               <b-table
                 id="my-table"
@@ -68,6 +76,14 @@
                 ></b-pagination>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-12'>
             <p class='text-center'>
             <strong>Total Daily Tron</strong>
             </p>
@@ -91,6 +107,14 @@
                 ></b-pagination>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+               <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-12'>
             <p class='text-center'>
             <strong>Total Daily Facebook</strong>
             </p>
@@ -114,6 +138,14 @@
                 ></b-pagination>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-12'>
             <p class='text-center'>
               <strong>Total Daily Google</strong>
             </p>
@@ -137,6 +169,14 @@
                 ></b-pagination>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='box'>
+      <div class='box-body'>
+        <div class='row'>
+          <div class='col-md-12'>
             <p class='text-center'>
               <strong>Total Daily Twitter</strong>
             </p>
@@ -164,7 +204,7 @@
         </div>
       </div>
     </div>
-     <h3>Biểu đồ new volume 20 ngày gần nhất</h3>
+       <h3>Biểu đồ new volume 20 ngày gần nhất</h3>
     <div class='box'>
       <div class='box-body'>
         <div class='row'>

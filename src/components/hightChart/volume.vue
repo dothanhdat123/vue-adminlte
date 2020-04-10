@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3>ToTal User: 3000 <small>User</small></h3>
-    <h3>Biểu đồ user theo type</h3>
+    <h3>ToTal Volume: 3000 <small>Volume</small></h3>
+    <h3>Biểu đồ volume theo type</h3>
     <div class='box'>
       <div class='box-body'>
         <div class='row'>
@@ -17,49 +17,154 @@
         </div>
       </div>
     </div>
-     <h3>Total Daily new user</h3>
+     <h3>Total Daily new Volume</h3>
     <div class='box'>
       <div class='box-body'>
         <div class='row'>
-          <div class='col-md-2'>
-          </div>
-          <div class='col-md-8'> 
-              <p class='text-center'>
-               <strong>Total Daily Mcashchain</strong>
-              </p>
-                <va-chart :chart-config='lineChartConfig'></va-chart>
-              <br />
-              <p class='text-center'>
-                <strong>Total Daily Metamask</strong>
-              </p>
-              <va-chart :chart-config='lineChartConfig'></va-chart>
-              <br />
-              <p class='text-center'>
-                <strong>Total Daily Tron</strong>
-              </p>
-             <va-chart :chart-config='lineChartConfig'></va-chart>
-              <br />
-              <p class='text-center'>
-                <strong>Total Daily Facebook</strong>
-              </p>
-              <va-chart :chart-config='lineChartConfig'></va-chart>
-              <br />
-              <p class='text-center'>
-                <strong>Total Daily Google</strong>
-              </p>
-             <va-chart :chart-config='lineChartConfig'></va-chart>
-              <br />
-              <p class='text-center'>
-                <strong>Total Daily Twitter</strong>
-              </p>
-               <va-chart :chart-config='lineChartConfig'></va-chart>
-          </div>
-          <div class='col-md-2'>    
+          <div class='col-md-12'>
+            <p class='text-center'>
+            <strong>Total Daily Mcashchain</strong>
+            </p>
+            <div class="overflow-auto">
+              <b-table
+                id="my-table"
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                small
+              ></b-table>
+              <div class="pull-right">
+                <b-pagination
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  first-text="First"
+                  prev-text="Prev"
+                  next-text="Next"
+                  last-text="Last"
+                ></b-pagination>
+              </div>
+            </div>
+            <p class='text-center'>
+            <strong>Total Daily Metamask</strong>
+            </p>
+            <div class="overflow-auto">
+              <b-table
+                id="my-table"
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                small
+              ></b-table>
+              <div class="pull-right">
+                <b-pagination
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  first-text="First"
+                  prev-text="Prev"
+                  next-text="Next"
+                  last-text="Last"
+                ></b-pagination>
+              </div>
+            </div>
+            <p class='text-center'>
+            <strong>Total Daily Tron</strong>
+            </p>
+            <div class="overflow-auto">
+              <b-table
+                id="my-table"
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                small
+              ></b-table>
+              <div class="pull-right">
+                <b-pagination
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  first-text="First"
+                  prev-text="Prev"
+                  next-text="Next"
+                  last-text="Last"
+                ></b-pagination>
+              </div>
+            </div>
+            <p class='text-center'>
+            <strong>Total Daily Facebook</strong>
+            </p>
+            <div class="overflow-auto">
+              <b-table
+                id="my-table"
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                small
+              ></b-table>
+              <div class="pull-right">
+                <b-pagination
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  first-text="First"
+                  prev-text="Prev"
+                  next-text="Next"
+                  last-text="Last"
+                ></b-pagination>
+              </div>
+            </div>
+            <p class='text-center'>
+              <strong>Total Daily Google</strong>
+            </p>
+            <div class="overflow-auto">
+              <b-table
+                id="my-table"
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                small
+              ></b-table>
+              <div class="pull-right">
+                <b-pagination
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  first-text="First"
+                  prev-text="Prev"
+                  next-text="Next"
+                  last-text="Last"
+                ></b-pagination>
+              </div>
+            </div>
+            <p class='text-center'>
+              <strong>Total Daily Twitter</strong>
+            </p>
+            <div class="overflow-auto">
+              <b-table
+                id="my-table"
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                small
+              ></b-table>
+              <div class="pull-right">
+                <b-pagination
+                  v-model="currentPage"
+                  :total-rows="rows"
+                  :per-page="perPage"
+                  first-text="First"
+                  prev-text="Prev"
+                  next-text="Next"
+                  last-text="Last"
+                ></b-pagination>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-     <h3>Biểu đồ new user 20 ngày gần nhất</h3>
+     <h3>Biểu đồ new volume 20 ngày gần nhất</h3>
     <div class='box'>
       <div class='box-body'>
         <div class='row'>
@@ -87,6 +192,19 @@
     },
     data () {
       return {
+        perPage: 5,
+        currentPage: 1,
+        items: [
+          { id: 1, game_name: 'Fred', total_volume: 26, daily_volume: 12 },
+          { id: 2, game_name: 'Wilma', total_volume: 68, daily_volume: 62 },
+          { id: 3, game_name: 'Barney', total_volume: 22, daily_volume: 66 },
+          { id: 4, game_name: 'Betty', total_volume: 16, daily_volume: 22 },
+          { id: 5, game_name: 'Pebbles', total_volume: 19, daily_volume: 18 },
+          { id: 6, game_name: 'Bamm Bamm', total_volume: 17, daily_volume: 69 },
+          { id: 7, game_name: 'The Great', total_volume: 30, daily_volume: 46 },
+          { id: 8, game_name: 'Rockhead', total_volume: 88, daily_volume: 38 },
+          { id: 9, game_name: 'Pearl', total_volume: 11, daily_volume: 86 }
+        ],
         chartConfig: {
           type: 'pie',
           data: {
@@ -166,6 +284,11 @@
     },
     created () {
       this.getdata()
+    },
+    computed: {
+      rows () {
+        return this.items.length
+      }
     }
   }
 </script>

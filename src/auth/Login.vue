@@ -8,10 +8,10 @@
         <h1>Login</h1>
       </div>
       <div>
-        <input type="text" id="login" class="fadeIn second"  placeholder="email" v-model="email" @change="changeEmail">
-        <p class="err">{{errorEmail}}</p>
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" v-model="password" @change = "changePass">
-        <p class="err">{{errorPassword}}</p>
+        <input type="text" id="login" autocomplete="off" class="fadeIn second"  placeholder="User Name" v-model="userName" @change="changeEmail">
+        <p class="err">{{erroruserName}}</p>
+        <input type="password" id="password" autocomplete="off" class="fadeIn third" name="password" placeholder="password" v-model="password" @change = "changePass">
+        <p class="err">{{errorPass}}</p>
       </div>
 
       <div class="button">
@@ -27,38 +27,6 @@
     </div>
   </div>
 </template>
-<script>
-  export default {
-    data () {
-      return {
-        email: null,
-        password: null,
-        errorEmail: '',
-        errorPassword: ''
-      }
-    },
-    methods: {
-      changeEmail (value) {
-      },
-      changePass (value) {
-      },
-      onSubmit () {
-        this.errorEmail = ''
-        this.errorPassword = ''
-        if (this.email == null) {
-          this.errorEmail = 'This field is required'
-        }
-        if (this.password == null) {
-          this.errorPassword = 'This field is required'
-        }
-        if (this.email != null && this.password != null) {
-          window.location.href = '/'
-          console.log(this.email)
-        }
-      }
-    }
-  }
-</script>
 <style>
   #app{
     min-height: 100%;
@@ -181,7 +149,7 @@
     transform: scale(0.95);
   }
 
-  input[type=text] {
+  input[type=text],input[type=password] {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -331,9 +299,10 @@
   export default {
     data () {
       return {
-        email: '',
+        userName: '',
         password: '',
-        error: null
+        erroruserName: '',
+        errorPass: ''
       }
     },
     methods: {
@@ -342,8 +311,22 @@
       changePass (value) {
       },
       onSubmit (e) {
-        e.preventDefault()
-        window.location.href = '/Dashboard'
+        if (this.userName === '') {
+          this.erroruserName = 'Bạn chưa nhập email'
+        }
+        if (this.password === '') {
+          this.errorPass = 'Bạn chưa nhập password'
+        }
+        if (this.userName !== '' && this.password !== '') {
+          let object = JSON.stringify({
+            access_token: 'yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJuYW1lIjoiVmFuTmd1eWVuIiwiYWRtaW4iOjF9LCJpYXQiOjE1ODY0OTE4NTgsImV4cCI6MTU4NjU3ODI1OH0.t9bbfHSDNd64UkOZM5q-vWUajdoLR-WAIqeZYQDRd28',
+            address: 'VanNguyen',
+            name: this.userName
+          })
+          sessionStorage.setItem('info', object)
+          e.preventDefault()
+          window.location.href = '/'
+        }
       }
     }
   }

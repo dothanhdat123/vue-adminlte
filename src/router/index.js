@@ -17,6 +17,9 @@ let router = new Router({
       path: '/',
       name: 'DefaultContainer',
       component: DefaultContainer,
+      meta: {
+        requireAuth: true
+      },
       children: [
         {
           path: '/Dashboard',
@@ -48,13 +51,17 @@ let router = new Router({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: {
+        requireAuth: false
+      }
     }
   ]
 })
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requireAuth)) {
-    if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
+    console.log(sessionStorage.getItem('info'))
+    if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).access_token != null) {
       next()
     } else {
       next({
@@ -62,7 +69,17 @@ router.beforeEach((to, from, next) => {
         params: {nextUrl: to.fullPath}
       })
     }
-  } else next()
+  } else {
+    if (sessionStorage.getItem('info') && JSON.parse(sessionStorage.getItem('info')).token != null) {
+      if (to.fullPath === '/login') {
+        next({
+          path: '/',
+          params: {nextUrl: to.fullPath}
+        })
+      }
+    }
+    next()
+  }
 })
 export default router
 

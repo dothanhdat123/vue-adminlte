@@ -27,32 +27,32 @@
               <p class='text-center'>
                <strong>Total Daily Mcashchain</strong>
               </p>
-              <va-chart :chart-config='barChartConfig'></va-chart>
+                <va-chart :chart-config='lineChartConfig'></va-chart>
               <br />
               <p class='text-center'>
                 <strong>Total Daily Metamask</strong>
               </p>
-              <va-chart :chart-config='barChartConfig'></va-chart>
+              <va-chart :chart-config='lineChartConfig'></va-chart>
               <br />
               <p class='text-center'>
                 <strong>Total Daily Tron</strong>
               </p>
-              <va-chart :chart-config='barChartConfig'></va-chart>
+             <va-chart :chart-config='lineChartConfig'></va-chart>
               <br />
               <p class='text-center'>
                 <strong>Total Daily Facebook</strong>
               </p>
-              <va-chart :chart-config='barChartConfig'></va-chart>
+              <va-chart :chart-config='lineChartConfig'></va-chart>
               <br />
               <p class='text-center'>
                 <strong>Total Daily Google</strong>
               </p>
-              <va-chart :chart-config='barChartConfig'></va-chart>
+             <va-chart :chart-config='lineChartConfig'></va-chart>
               <br />
               <p class='text-center'>
                 <strong>Total Daily Twitter</strong>
               </p>
-              <va-chart :chart-config='barChartConfig'></va-chart>
+               <va-chart :chart-config='lineChartConfig'></va-chart>
           </div>
           <div class='col-md-2'>    
           </div>
@@ -130,7 +130,7 @@
                   'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 1,
-                data: [65, 59, 80, 81, 56, 55, 40, 90, 20, 15, 36, 52, 11, 25, 46, 18, 29, 64, 37,28]
+                data: [65, 59, 80, 81, 56, 55, 40, 90, 20, 15, 36, 52, 11, 25, 46, 18, 29, 64, 37, 28]
               }
             ]
           },
@@ -144,8 +144,28 @@
               }]
             }
           }
+        },
+        lineChartConfig: {
+          type: 'line',
+          data: {
+            datasets: [{
+              data: []
+            }],
+            labels: []
+          }
         }
       }
+    },
+    methods: {
+      getdata () {
+        let number = [10, 60, 30, 40, 50, 30, 10, 60, 30, 40, 50, 30, 10, 60, 30, 40, 50, 30, 50, 30]
+        let lable = ['day 1', 'day 2', 'day 3', 'day 4', 'day 5', 'day 6', 'day 7', 'day 8', 'day 9', 'day 10', 'day 11', 'day 12', 'day 13', 'day 14', 'day 15', 'day 16', 'day 17', 'day 18', 'day 19', 'day 20']
+        this.lineChartConfig.data.datasets[0].data = number
+        this.lineChartConfig.data.labels = lable
+      }
+    },
+    created () {
+      this.getdata()
     }
   }
 </script>

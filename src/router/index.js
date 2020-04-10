@@ -8,6 +8,11 @@ import Withdraw from 'components/Withdraw.vue'
 import DefaultContainer from 'components/default.vue'
 import Login from 'auth/Login.vue'
 
+// hightchart
+import UserHightChart from 'components/hightChart/user.vue'
+import RevenueHightChart from 'components/hightChart/revenue.vue'
+import VolumeHightChart from 'components/hightChart/volume.vue'
+
 Vue.use(Router)
 let router = new Router({
   mode: 'history', // https://router.vuejs.org/api/#mode
@@ -45,6 +50,21 @@ let router = new Router({
           path: '/Withdraw',
           name: 'Withdraw',
           component: Withdraw
+        },
+        {
+          path: '/UserHightChart',
+          name: 'UserHightChart',
+          component: UserHightChart
+        },
+        {
+          path: '/RevenueHightChart',
+          name: 'RevenueHightChart',
+          component: RevenueHightChart
+        },
+        {
+          path: '/VolumeHightChart',
+          name: 'VolumeHightChart',
+          component: VolumeHightChart
         }
       ]
     },
